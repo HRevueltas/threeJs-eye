@@ -1,7 +1,5 @@
 import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
-import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
 import { gsap } from "https://cdn.skypack.dev/gsap";
-import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
 
 
 
@@ -70,13 +68,8 @@ window.addEventListener('dblclick', () => {
 })
 
 
-// Controls
-// const controls = new OrbitControls(camera, canvas)
 const renderer = new THREE.WebGLRenderer({ canvas });
 renderer.setSize(width, height);
-
-
-
 
 
 // this indicates if the mouse is over the canvas
@@ -96,24 +89,7 @@ window.addEventListener('mousemove', (event) => {
         x: cursor.x * 5,
         y: cursor.y * 5,
         z: 0,
-        // ease: "bounce" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "elastic" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "back" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "steps(600)" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "power4" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "power2" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "power1" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "power3" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "power5" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "power6.out" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "expo" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "expo" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "sine" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "linear" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "quint" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "quart" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "quad" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
-        // ease: "cubic" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
+        ease: "sine" // Opcional: puedes ajustar el tipo de suavizado según tu preferencia
 
     });
 
@@ -157,20 +133,8 @@ window.addEventListener('mouseout', () => {
 
 
 
-// Clock
-const clock = new THREE.Clock();
 // Animation loop
 const tick = () => {
-    // const elapsedTime = clock.getElapsedTime();
-
-
-    // this will rotate the mesh if the mouse is over the canvas
-    // if (isMouseOver) {
-    //     mesh.rotation.y = cursor.x;
-    //     mesh.rotation.x = cursor.y;
-    // }
-
-
 
     // Update camera
     // camera.position.x = Math.sin(cursor.x * Math.PI * 2) * 3;
