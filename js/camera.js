@@ -1,15 +1,11 @@
 import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
 import { gsap } from "https://cdn.skypack.dev/gsap";
 
-
-
 // Cursor
 const cursor = {
     x: 0,
     y: 0
 }
-
-
 
 // Scene
 const scene = new THREE.Scene();
@@ -24,9 +20,9 @@ let { width, height } = sizes;
 // camera 
 const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 100);
 // Camera
+
 camera.position.z = 3;
 scene.add(camera);
-
 
 // Objects
 const geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -44,8 +40,6 @@ scene.add(mesh);
 // Canvas
 const canvas = document.querySelector('.webgl');
 
-
-
 // Resize event
 window.addEventListener('resize', () => {
     width = window.innerWidth
@@ -58,7 +52,7 @@ window.addEventListener('resize', () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
-// Double click event
+// Double click event to go fullscreen
 window.addEventListener('dblclick', () => {
     if (!document.fullscreenElement) {
         canvas.requestFullscreen()
@@ -67,10 +61,8 @@ window.addEventListener('dblclick', () => {
     }
 })
 
-
 const renderer = new THREE.WebGLRenderer({ canvas });
 renderer.setSize(width, height);
-
 
 // this indicates if the mouse is over the canvas
 let isMouseOver = true;
@@ -129,10 +121,6 @@ window.addEventListener('mouseout', () => {
     });
 })
 
-
-
-
-
 // Animation loop
 const tick = () => {
 
@@ -148,5 +136,4 @@ const tick = () => {
     renderer.render(scene, camera);
     requestAnimationFrame(tick);
 }
-
 tick();
